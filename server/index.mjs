@@ -6,9 +6,6 @@ const app = express();
 const PORT = 3000;
 
 const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyydToT9NVHJCVtFlPjEvoJfqGTy0x7QxZJzE7-AJLXleXb95a_V_ioul6NN5MZXuNsGQ/exec';
-
-import cors from 'cors';
-
 app.use(cors({
   origin: 'https://flexxmasterapparel.vercel.app'  // ✅ Add your Vercel frontend URL
 }));
