@@ -35,7 +35,7 @@ export default function ConfirmModal({ isOpen, onClose, cart, onConfirm, locatio
 
 
     try {
-      const response = await fetch('https://flexxmasterapparel.onrender.com', {
+      const response = await fetch('https://flexxmasterapparel.onrender.com/submit-order', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(orderData)
