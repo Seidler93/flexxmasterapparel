@@ -14,7 +14,7 @@ app.use(express.json());
 
 app.post('/submit-order', async (req, res) => {
   try {
-    console.log('Incoming order:', req.body); // ✅ Debug incoming payload
+    console.log('Received order:', req.body);
 
     const response = await fetch(GOOGLE_SCRIPT_URL, {
       method: 'POST',
@@ -22,15 +22,17 @@ app.post('/submit-order', async (req, res) => {
       body: JSON.stringify(req.body)
     });
 
-    const text = await response.text(); // 🔁 Temporarily use .text() to see raw error
-    console.log('Google Script Response:', text);
+    const text = await response.text();
+    console.log('Google Script response:', text);
 
-    res.json(JSON.parse(text)); // Try to parse only after logging it
+    const result = JSON.parse(text);
+    res.json(result); // return the script’s status back to frontend
   } catch (err) {
-    console.error('Proxy Error:', err.message);
-    res.status(500).json({ status: 'error', message: 'Proxy failed', error: err.message });
+    console.error('Server Error:', err.message);
+    res.status(500).json({ status: 'error', message: 'Failed to submit order' });
   }
 });
+
 
 
 app.listen(PORT, () => {
