@@ -13,7 +13,7 @@ export const products = [
     price: 25,
     image: '/blueshirt.png',
     sizes: true,
-    description: 'Turquoise Next Level T-Shirt '
+    description: 'Turquoise Next Level T-Shirt'
   },
   {
     id: 3,
@@ -29,7 +29,7 @@ export const products = [
     price: 20,
     image: '/hatblack.png',
     sizes: false,
-    description: "White '47 Brand Clean Up Cap (slide buckle closure)"
+    description: "Black '47 Brand Clean Up Cap (slide buckle closure)"
   },
   {
     id: 5,
