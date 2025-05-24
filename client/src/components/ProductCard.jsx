@@ -24,12 +24,13 @@ export default function ProductCard({ product, onAdd }) {
         alt={product.name}
         className="h-40 object-contain mb-4"
       />
-      <h2 className="font-semibold text-lg">{product.name}</h2>
+      <h2 className="font-semibold text-lg">{product.description}</h2>
+      {/* <h2 className="font-semibold font-medium">{product.description}</h2> */}
       <p className="text-gray-700 mb-4">${product.price}</p>
 
       {/* Size Selector */}
       {product?.sizes && (
-        <div className="flex gap-2 mb-4">
+        <div className="flex flex-wrap gap-2 mb-4">
           {sizes.map((size) => (
             <button
               key={size}
@@ -65,8 +66,11 @@ export default function ProductCard({ product, onAdd }) {
 
       <button
         onClick={handleAddToCart}
-        className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
-      >
+        disabled={product?.sizes && !selectedSize}
+        className={`px-4 py-2 rounded text-white transition 
+          ${product?.sizes && !selectedSize
+            ? "bg-gray-400 cursor-not-allowed"
+            : "bg-blue-600 hover:bg-blue-700"}`}      >
         Add to Cart
       </button>
     </div>
