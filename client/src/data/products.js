@@ -15,12 +15,12 @@ export const products = [
     image: '/blueshirt.png',
     sizes: true,
     description: 'Turquoise Next Level T-Shirt',
-    itemInfo: 'White Tee',
+    itemInfo: 'Blue Tee',
   },
   {
     id: 3,
     name: 'Flexx Hat (White)',
-    price: 20,
+    price: 30,
     image: '/hatwhite.png',
     sizes: false,
     description: "White '47 Brand Clean Up Cap (slide buckle closure)",
@@ -29,7 +29,7 @@ export const products = [
   {
     id: 4,
     name: 'Flexx Hat (Black)',
-    price: 20,
+    price: 30,
     image: '/hatblack.png',
     sizes: false,
     description: "Black '47 Brand Clean Up Cap (slide buckle closure)",
@@ -38,7 +38,7 @@ export const products = [
   {
     id: 5,
     name: 'Flexx Crop (Black)',
-    price: 20,
+    price: 25,
     image: '/blackcrop.png',
     sizes: true,
     description: "Black Bella + Canvas Women\'s Jersey Crop Tee (RUNS SMALL)",

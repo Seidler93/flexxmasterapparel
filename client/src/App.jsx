@@ -70,6 +70,7 @@ export default function App() {
       />
 
       <main className="flex-1 py-20 max-w-5xl mx-auto px-4">
+        <h2 className='text-center pt-3'>ALL ORDERS MUST BE PLACED BY FRIDAY JUNE 6TH! Once the apparel is handed out we will charge your credit card on file. </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 pt-8 pt-small-20">
           {products.map((product) => (
             <ProductCard

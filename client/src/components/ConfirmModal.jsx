@@ -7,6 +7,7 @@ export default function ConfirmModal({ isOpen, onClose, cart, onConfirm, locatio
   const [email, setEmail] = useState("");
   const [athlete, setAthlete] = useState("");
   const [orderConfirmed, setOrderConfirmed] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const close = () => {
     setOrderConfirmed(false)
@@ -18,7 +19,9 @@ export default function ConfirmModal({ isOpen, onClose, cart, onConfirm, locatio
       alert('Please fill out all fields.');
       return;
     }
-
+  
+    setLoading(true); // Start loading
+  
     const orderData = {
       firstName,
       lastName,
@@ -34,35 +37,32 @@ export default function ConfirmModal({ isOpen, onClose, cart, onConfirm, locatio
       })),
       total: cart.reduce((sum, item) => sum + item.price * item.quantity, 0)
     };
-
-    console.log(orderData);
-    
-
-
+  
     try {
       const response = await fetch('https://flexxmasterapparel.onrender.com/submit-order', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(orderData)
       });
-
-      if (!response.ok) {
-        throw new Error('Failed to submit order');
-      }
-
+  
+      if (!response.ok) throw new Error('Failed to submit order');
+      
       const result = await response.json();
-
+  
       if (result.status === 'success') {
-        setOrderConfirmed(true); // ✅ Set success state
-        onConfirm(); // Or reset state, close modal, etc.
+        setOrderConfirmed(true);
+        onConfirm();
       } else {
         throw new Error('Submission failed at server.');
       }
-
     } catch (err) {
       console.error('Error submitting to Sheets:', err);
+      alert("There was a problem submitting your order. Please try again.");
+    } finally {
+      setLoading(false); // Always stop loading
     }
   };
+  
 
   // Reset fields when modal closes or opens
   useEffect(() => {
@@ -108,7 +108,7 @@ export default function ConfirmModal({ isOpen, onClose, cart, onConfirm, locatio
         {orderConfirmed ? (
           <div className="p-6 text-center">
             <h2 className="text-xl font-semibold mb-2">Order Complete!</h2>
-            <p className="text-gray-600">Confirmation email will be sent soon.</p>
+            <p className="text-gray-600">Your order confirmation has been sent! Please check your spam folder if you do not receive it.</p>
           </div>
         ) : (
           <>
@@ -191,7 +191,8 @@ export default function ConfirmModal({ isOpen, onClose, cart, onConfirm, locatio
                   )
                 )}
               </div>
-
+              <p className="text-red-500 text-sm text-center pb-3">You won’t be charged today, your card on file will be billed when the apparel arrives at your Flexx location.</p>
+              <p className="text-center text-sm pb-3">Please note: Tax is not included in today’s total and will be added when your card is charged.</p>
               <div className="flex justify-end space-x-3">
                 <button
                   onClick={onClose}
@@ -201,13 +202,13 @@ export default function ConfirmModal({ isOpen, onClose, cart, onConfirm, locatio
                 </button>
                 <button
                   onClick={handleConfirm}
-                  disabled={!canConfirm}
-                  className={`px-4 py-2 rounded ${canConfirm
+                  disabled={!canConfirm || loading}
+                  className={`px-4 py-2 rounded ${canConfirm && !loading
                     ? "bg-green-600 text-white hover:bg-green-700"
                     : "bg-gray-400 text-gray-700 cursor-not-allowed"
                     }`}
                 >
-                  Confirm Order
+                  {loading ? "Processing..." : "Confirm Order"}
                 </button>
               </div>
           </>

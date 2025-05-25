@@ -92,7 +92,7 @@ export default function CartDrawer({
           {/* Total row */}
           <div className="flex justify-between items-center font-bold text-lg border-t pt-2 mt-4">
             <p>Total</p>
-            <p>${total.toFixed(2)}</p>
+            <p>${total.toFixed(2)} + Tax</p>
           </div>
         </div>
 
@@ -124,10 +124,9 @@ export default function CartDrawer({
             disabled={cart.length === 0}
             title={!location ? "Select a location first" : ""}
           >
-            Confirm Order
+            View Order
           </button>
         </div>
-
       </div>
     </div>
   );
