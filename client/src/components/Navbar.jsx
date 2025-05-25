@@ -1,4 +1,4 @@
-import { ShoppingCart } from '../../public/node_modules/lucide-react/dist/lucide-react'
+import { ShoppingCart } from 'lucide-react'
 
 export default function Navbar({ cartCount, onCartClick }) {
   return (
