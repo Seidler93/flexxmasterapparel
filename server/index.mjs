@@ -8,15 +8,21 @@ const PORT = 3000;
 const scriptMap = {
   Flahive: 'https://script.google.com/macros/s/AKfycbzSvQpqbYC3ZZlMWN5_wucb5t0JcrEcMBzPWn9Tval-5xmAfKcan3Um2ZZOGSH8x1Qm/exec',
   Flexx: 'https://script.google.com/macros/s/AKfycbxoKmoHzC7aL9P1fMa1vJpS6HIH6pD1BZuUagtUCOn2SnbKGbmeFYFRZCEfn7iOR0LJ/exec'
-}
+};
 
 app.use(cors({
-  origin: ['http://localhost:5173', 'https://flexxmasterapparel.vercel.app', 'https://www.flahiveapparel.com', 'https://www.flexxpersonaltrainingapparel.com'],
+  origin: [
+    'http://localhost:5173',
+    'https://flexxmasterapparel.vercel.app',
+    'https://www.flahiveapparel.com',
+    'https://www.flexxpersonaltrainingapparel.com'
+  ],
   methods: ['POST'],
   credentials: true
 }));
 
 app.use(express.json());
+
 app.post('/submit-order', async (req, res) => {
   const location = req.body.location;
   const scriptUrl = scriptMap[location];
@@ -29,7 +35,7 @@ app.post('/submit-order', async (req, res) => {
     console.log('Received order:', req.body);
 
     const params = new URLSearchParams();
-    params.append('data', JSON.stringify(req.body)); // pass the full object as a string
+    params.append('data', JSON.stringify(req.body));
 
     const response = await fetch(scriptUrl, {
       method: 'POST',
@@ -40,14 +46,16 @@ app.post('/submit-order', async (req, res) => {
     console.log('Google Script response:', text);
 
     const result = JSON.parse(text);
-    res.json(result); // return the script’s status back to frontend
+    res.json(result);
   } catch (err) {
     console.error('Server Error:', err.message);
     res.status(500).json({ status: 'error', message: 'Failed to submit order' });
   }
 });
 
-
+app.get('/', (req, res) => {
+  res.send('Flexx Order API is live ✅');
+});
 
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
