@@ -5,7 +5,7 @@ import fetch from 'node-fetch';
 const app = express();
 const PORT = 3000;
 
-const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyydToT9NVHJCVtFlPjEvoJfqGTy0x7QxZJzE7-AJLXleXb95a_V_ioul6NN5MZXuNsGQ/exec';
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxuUU6_Ile_af6SagDwI34lFY_5qidfSPYdU37Vn0-Xm0zjU4dmwSSzWLtnna0RXInosw/exec';
 app.use(cors({
   origin: ['http://localhost:5173', 'https://flexxmasterapparel.vercel.app'],
   methods: ['POST'],
