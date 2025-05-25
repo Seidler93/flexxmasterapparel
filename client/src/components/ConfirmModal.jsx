@@ -30,7 +30,7 @@ export default function ConfirmModal({ isOpen, onClose, cart, onConfirm, locatio
         quantity: item.quantity,
         size: item.size || 'N/A',
         description: item.description,
-        itemInfo: item.info
+        itemInfo: item.itemInfo
       })),
       total: cart.reduce((sum, item) => sum + item.price * item.quantity, 0)
     };
