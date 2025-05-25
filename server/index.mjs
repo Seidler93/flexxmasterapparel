@@ -12,7 +12,7 @@ const scriptMap = {
 
 const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzSvQpqbYC3ZZlMWN5_wucb5t0JcrEcMBzPWn9Tval-5xmAfKcan3Um2ZZOGSH8x1Qm/exec';
 app.use(cors({
-  origin: ['http://localhost:5173', 'https://flexxmasterapparel.vercel.app'],
+  origin: ['http://localhost:5173', 'https://flexxmasterapparel.vercel.app', 'https://www.flahiveapparel.com/', 'https://www.flexxpersonaltrainingapparel.com/'],
   methods: ['POST'],
   credentials: true
 }));
