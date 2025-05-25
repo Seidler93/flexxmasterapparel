@@ -5,7 +5,8 @@ export const products = [
     price: 25,
     image: '/blackshirt.png',
     sizes: true,
-    description: 'Black Next Level T-Shirt'
+    description: 'Black Next Level T-Shirt',
+    itemInfo: 'Black Tee',
   },
   {
     id: 2,
@@ -13,7 +14,8 @@ export const products = [
     price: 25,
     image: '/blueshirt.png',
     sizes: true,
-    description: 'Turquoise Next Level T-Shirt'
+    description: 'Turquoise Next Level T-Shirt',
+    itemInfo: 'White Tee',
   },
   {
     id: 3,
@@ -21,7 +23,8 @@ export const products = [
     price: 20,
     image: '/hatwhite.png',
     sizes: false,
-    description: "White '47 Brand Clean Up Cap (slide buckle closure)" 
+    description: "White '47 Brand Clean Up Cap (slide buckle closure)",
+    itemInfo: 'Black Hat',
   },
   {
     id: 4,
@@ -29,7 +32,8 @@ export const products = [
     price: 20,
     image: '/hatblack.png',
     sizes: false,
-    description: "Black '47 Brand Clean Up Cap (slide buckle closure)"
+    description: "Black '47 Brand Clean Up Cap (slide buckle closure)",
+    itemInfo: 'White Hat',
   },
   {
     id: 5,
@@ -37,6 +41,7 @@ export const products = [
     price: 20,
     image: '/blackcrop.png',
     sizes: true,
-    description: "Black Bella + Canvas Women\'s Jersey Crop Tee (RUNS SMALL)"
+    description: "Black Bella + Canvas Women\'s Jersey Crop Tee (RUNS SMALL)",
+    itemInfo: 'Crop',
   },
 ]
