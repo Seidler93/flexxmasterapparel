@@ -33,7 +33,6 @@ export default function App() {
         (item) =>
           item.id === newItem.id &&
           item.size === newItem.size
-        // optionally compare color or other properties if needed
       );
 
       if (index !== -1) {

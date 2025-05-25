@@ -35,6 +35,9 @@ export default function ConfirmModal({ isOpen, onClose, cart, onConfirm, locatio
       total: cart.reduce((sum, item) => sum + item.price * item.quantity, 0)
     };
 
+    console.log(orderData);
+    
+
 
     try {
       const response = await fetch('https://flexxmasterapparel.onrender.com/submit-order', {
