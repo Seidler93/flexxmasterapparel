@@ -5,6 +5,11 @@ import fetch from 'node-fetch';
 const app = express();
 const PORT = 3000;
 
+const scriptMap = {
+  Flahive: 'https://script.google.com/macros/s/AKfycbzSvQpqbYC3ZZlMWN5_wucb5t0JcrEcMBzPWn9Tval-5xmAfKcan3Um2ZZOGSH8x1Qm/exec',
+  Flexx: 'https://script.google.com/macros/s/AKfycbxoKmoHzC7aL9P1fMa1vJpS6HIH6pD1BZuUagtUCOn2SnbKGbmeFYFRZCEfn7iOR0LJ/exec'
+}
+
 const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzSvQpqbYC3ZZlMWN5_wucb5t0JcrEcMBzPWn9Tval-5xmAfKcan3Um2ZZOGSH8x1Qm/exec';
 app.use(cors({
   origin: ['http://localhost:5173', 'https://flexxmasterapparel.vercel.app'],
@@ -14,17 +19,23 @@ app.use(cors({
 
 app.use(express.json());
 app.post('/submit-order', async (req, res) => {
+  const location = req.body.location;
+  const scriptUrl = scriptMap[location];
+
+  if (!scriptUrl) {
+    return res.status(400).json({ status: 'error', message: 'Unknown location' });
+  }
+
   try {
     console.log('Received order:', req.body);
 
     const params = new URLSearchParams();
     params.append('data', JSON.stringify(req.body)); // pass the full object as a string
 
-    const response = await fetch(GOOGLE_SCRIPT_URL, {
+    const response = await fetch(scriptUrl, {
       method: 'POST',
       body: params
     });
-
 
     const text = await response.text();
     console.log('Google Script response:', text);

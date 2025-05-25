@@ -1,4 +1,4 @@
-import { Trash2 } from 'lucide-react';
+import { Trash2 } from '../../public/node_modules/lucide-react/dist/lucide-react';
 import { locations } from '../data/locations';
 import { useState } from "react";
 
