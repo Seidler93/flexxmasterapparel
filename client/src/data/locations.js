@@ -1,7 +1,7 @@
 export const locations = [
   "Highland Park",
   "Barrington",
-  "Niles",
+  // "Niles",
   "Arlington Heights",
   "Glenview",
   "Elmhurst", 
