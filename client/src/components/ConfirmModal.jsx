@@ -28,7 +28,7 @@ export default function ConfirmModal({ isOpen, onClose, cart, onConfirm, locatio
       items: cart.map(item => ({
         name: item.name,
         quantity: item.quantity,
-        size: item.size || 'N/A',
+        size: item.size || 'ONE SIZE',
         description: item.description,
         itemInfo: item.itemInfo
       })),

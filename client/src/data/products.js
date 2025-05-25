@@ -24,7 +24,7 @@ export const products = [
     image: '/hatwhite.png',
     sizes: false,
     description: "White '47 Brand Clean Up Cap (slide buckle closure)",
-    itemInfo: 'Black Hat',
+    itemInfo: 'White Hat',
   },
   {
     id: 4,
@@ -33,7 +33,7 @@ export const products = [
     image: '/hatblack.png',
     sizes: false,
     description: "Black '47 Brand Clean Up Cap (slide buckle closure)",
-    itemInfo: 'White Hat',
+    itemInfo: 'Black Hat',
   },
   {
     id: 5,
