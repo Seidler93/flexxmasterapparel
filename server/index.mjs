@@ -10,9 +10,8 @@ const scriptMap = {
   Flexx: 'https://script.google.com/macros/s/AKfycbxoKmoHzC7aL9P1fMa1vJpS6HIH6pD1BZuUagtUCOn2SnbKGbmeFYFRZCEfn7iOR0LJ/exec'
 }
 
-const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzSvQpqbYC3ZZlMWN5_wucb5t0JcrEcMBzPWn9Tval-5xmAfKcan3Um2ZZOGSH8x1Qm/exec';
 app.use(cors({
-  origin: ['http://localhost:5173', 'https://flexxmasterapparel.vercel.app', 'https://www.flahiveapparel.com/', 'https://www.flexxpersonaltrainingapparel.com/'],
+  origin: ['http://localhost:5173', 'https://flexxmasterapparel.vercel.app', 'https://www.flahiveapparel.com', 'https://www.flexxpersonaltrainingapparel.com'],
   methods: ['POST'],
   credentials: true
 }));
