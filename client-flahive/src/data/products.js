@@ -1,7 +1,7 @@
 export const products = [
   {
     id: 1,
-    name: 'Flexx Tee (Black)',
+    name: 'Flahive Tee (Black)',
     price: 25,
     image: '/fblackshirt.png',
     sizes: true,
@@ -10,7 +10,7 @@ export const products = [
   },
   {
     id: 2,
-    name: 'Flexx Tee (Blue)',
+    name: 'Flahive Tee (Blue)',
     price: 25,
     image: '/fblueshirt.png',
     sizes: true,
@@ -19,7 +19,7 @@ export const products = [
   },
   {
     id: 3,
-    name: 'Flexx Hat (White)',
+    name: 'Flahive Hat (White)',
     price: 30,
     image: '/fhatwhite.png',
     sizes: false,
@@ -28,7 +28,7 @@ export const products = [
   },
   {
     id: 4,
-    name: 'Flexx Hat (Black)',
+    name: 'Flahive Hat (Black)',
     price: 30,
     image: '/fhatblack.png',
     sizes: false,
@@ -37,7 +37,7 @@ export const products = [
   },
   {
     id: 5,
-    name: 'Flexx Crop (Black)',
+    name: 'Flahive Crop (Black)',
     price: 25,
     image: '/fblackcrop.png',
     sizes: true,

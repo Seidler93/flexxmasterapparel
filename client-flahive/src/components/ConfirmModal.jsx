@@ -174,7 +174,7 @@ export default function ConfirmModal({ isOpen, onClose, cart, onConfirm, locatio
                   )
                 )}
               </div>
-              <p className="text-red-500 text-sm text-center pb-3">You won’t be charged today, your card on file will be billed when the apparel arrives at your Flexx location.</p>
+              <p className="text-red-500 text-sm text-center pb-3">You won’t be charged today, your card on file will be billed when the apparel arrives at the gym.</p>
               <p className="text-center text-sm pb-3">Please note: Tax is not included in today’s total and will be added when your card is charged.</p>
               <div className="flex justify-end space-x-3">
                 <button
