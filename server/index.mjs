@@ -24,10 +24,10 @@ app.use(cors({
 app.use(express.json());
 
 app.post('/submit-order', async (req, res) => {
+  console.log('test');
   const location = req.body.location;
   const scriptUrl = scriptMap[location];
 
-  console.log(location);
   
 
   if (!scriptUrl) {
