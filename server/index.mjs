@@ -26,7 +26,8 @@ app.use(express.json());
 app.post('/submit-order', async (req, res) => {
   const location = req.body.location;
   const scriptUrl = scriptMap[location];
-  console.log(scriptUrl);
+  console.log(req.body);
+  console.log(location);
 
   
 
