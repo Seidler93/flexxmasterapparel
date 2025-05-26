@@ -24,12 +24,10 @@ app.use(cors({
 app.use(express.json());
 
 app.post('/submit-order', async (req, res) => {
-  const location = req.body.location;
-  const scriptUrl = scriptMap[location];
+  const gym = req.body.gym;
+  const scriptUrl = scriptMap[gym];
   console.log(req.body);
-  console.log(location);
-
-  
+  console.log(gym);
 
   if (!scriptUrl) {
     return res.status(400).json({ status: 'error', message: 'Unknown location' });

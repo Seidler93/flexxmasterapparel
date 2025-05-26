@@ -43,7 +43,7 @@ export default function ConfirmModal({ isOpen, onClose, cart, onConfirm, locatio
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          location: "Flexx",
+          gym: "Flexx",
           ...orderData
         })      
       });
