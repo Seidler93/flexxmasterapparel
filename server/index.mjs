@@ -27,6 +27,9 @@ app.post('/submit-order', async (req, res) => {
   const location = req.body.location;
   const scriptUrl = scriptMap[location];
 
+  console.log(location);
+  
+
   if (!scriptUrl) {
     return res.status(400).json({ status: 'error', message: 'Unknown location' });
   }
