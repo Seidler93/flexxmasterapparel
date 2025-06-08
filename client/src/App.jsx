@@ -88,7 +88,7 @@ export default function App() {
             </div>
           </>
         ) : (
-          <p className="text-center text-xl font-semibold text-gray-700">
+          <p className="text-center text-xl font-semibold text-gray-700 pt-20">
             The window to order has closed. Stay tuned for our next apparel drop!
           </p>
         )}
